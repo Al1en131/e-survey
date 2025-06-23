@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html,
+    body {
+        font-family: "Poppins", sans-serif;
+    }
+
+    .font-inter {
+        font-family: "Inter", sans;
+    }
+
+    .font-sora {
+        font-family: "Sora", sans-serif;
+    }
+
+    .font-josefin {
+        font-family: "Josefin Sans", sans-serif;
+    }
+
+    .rounded-half {
+        border-radius: 50%;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply flex items-center justify-center gap-2 px-5 py-2 border rounded-lg text-nowrap w-auto;
+    }
+
+    .btn-primary {
+        @apply bg-primary text-white;
+    }
+}
