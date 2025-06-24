@@ -1,9 +1,21 @@
 <x-admin-layout>
-    <div class=" py-9 max-md:py-6">
+    <div class="">
         <div class="flex items-center justify-between mb-6 max-md:mb-4">
             <div class="font-agrandir">
                 <h1 class=" text-4xl text-secondary font-medium pb-2 max-md:text-lg max-md:pb-0">Answer Data
                 </h1>
+            </div>
+        </div>
+        <div class="mb-8 px-4 py-2 bg-primary flex items-center gap-12 rounded-lg">
+            <div class="flex items-center space-x-3">
+                <img src="/assets/image/people.png" alt="People Icon" class="w-52 h-52 object-cover rounded-full" />
+            </div>
+            <div class="text-white">
+                <h2 class="text-xl font-semibold mb-2">Survey Participation Overview</h2>
+                <p class="text-sm leading-relaxed max-w-2xl">
+                    This page lists all available surveys along with the number of participants. You can view detailed
+                    participant information, including names and emails, by selecting a specific survey.
+                </p>
             </div>
         </div>
         <div class="overflow-x-auto rounded-xl">

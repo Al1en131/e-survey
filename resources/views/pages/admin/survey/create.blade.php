@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <div class="py-9 max-md:py-6">
+    <div class="">
         <div class="mx-auto">
             <div class="flex items-center justify-between pb-[31px] max-md:pb-4">
                 <div class="">
@@ -32,6 +32,21 @@
                     {{ session('error') }}
                 </div>
             @endif
+
+            <div class="mb-8 px-4 py-2 bg-primary flex items-center gap-12 rounded-lg">
+                <div class="flex items-center space-x-3">
+                    <img src="/assets/image/people.png" alt="People Icon" class="w-52 h-52 object-cover rounded-full" />
+                </div>
+                <div class="text-white">
+                    <h2 class="text-xl font-semibold mb-2">Create a New Survey</h2>
+                    <p class="text-sm leading-relaxed max-w-2xl">
+                        Use this page to create a new survey for your target audience. Provide a clear title, detailed
+                        description, and relevant questions to collect accurate and meaningful responses. Once
+                        published, the survey will be available for users to access and fill out.
+                    </p>
+                </div>
+            </div>
+
             <div class="overflow-hidden sm:rounded-lg">
                 <div class="py-1 lg:py-2">
                     <form action="{{ route('admin.survey.store') }}" method="POST" enctype="multipart/form-data">

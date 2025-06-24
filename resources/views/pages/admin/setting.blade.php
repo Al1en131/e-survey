@@ -1,6 +1,6 @@
 <x-admin-layout>
-    <div class="py-9 max-md:px-5 max-md:py-6">
-        <div class="mx-auto sm:px-6 lg:px-20">
+    <div class="">
+        <div class="">
             <div class="flex items-center justify-between pb-[31px] max-md:pb-4">
                 <div class="">
                     <h1 class="pb-2 text-4xl font-medium text-secondery max-md:pb-0 max-md:text-lg">
@@ -19,6 +19,20 @@
                     </div>
                 </div>
             </div>
+            <div class="mb-8 px-8 py-2 bg-primary flex items-center gap-12 rounded-lg">
+                <div class="flex items-center space-x-3">
+                    <img src="/assets/image/people.png" alt="People Icon" class="w-52 h-52 object-cover rounded-full" />
+                </div>
+                <div class="text-white">
+                    <h2 class="text-xl font-semibold mb-2">Company Profile Settings</h2>
+                    <p class="text-sm leading-relaxed max-w-2xl">
+                        This page allows you to update your company's profile information, including the logo, company
+                        name, and a short description. Keep your profile up to date to maintain a professional
+                        appearance across the platform.
+                    </p>
+                </div>
+            </div>
+
             <form method="POST" action="{{ route('admin.management.update', ['management' => $management->id]) }}"
                 enctype="multipart/form-data" class="mt-6 space-y-6">
                 @csrf
@@ -55,7 +69,7 @@
                 <div class="mb-10 grid gap-4 sm:grid-cols-2 sm:gap-6">
                     <div class="block sm:col-span-2 sm:flex">
                         <label for="dropzone-file"
-                            class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                            class="flex flex-col items-center justify-center w-full h-64 border-2 border-primary border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                             <div class="flex flex-col items-center justify-center pt-5 pb-6" id="upload-container">
                                 @if ($management->getFirstMediaUrl('management'))
                                     <div class="mb-4 flex justify-center md:justify-center">

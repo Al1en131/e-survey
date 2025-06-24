@@ -1,6 +1,6 @@
 <x-admin-layout>
-    <div class="py-9 max-md:px-5 max-md:py-6">
-        <div class="mx-auto sm:px-6 lg:px-20">
+    <div class="">
+        <div class="">
             <div class="flex items-center justify-between pb-[31px] max-md:pb-4">
                 <div class="">
                     <h1 class="pb-2 text-4xl font-medium text-secondery max-md:pb-0 max-md:text-lg">
@@ -32,6 +32,20 @@
                     {{ session('error') }}
                 </div>
             @endif
+
+            <div class="mb-8 px-4 py-2 bg-primary flex items-center gap-12 rounded-lg">
+                <div class="flex items-center space-x-3">
+                    <img src="/assets/image/people.png" alt="People Icon" class="w-52 h-52 object-cover rounded-full" />
+                </div>
+                <div class="text-white">
+                    <h2 class="text-xl font-semibold mb-2">Edit Existing Survey</h2>
+                    <p class="text-sm leading-relaxed max-w-2xl">
+                        This page allows you to update the details of an existing survey. You can modify the title,
+                        description, and questions to better suit your objectives. Once changes are saved, the updated
+                        survey will be reflected for all participants.
+                    </p>
+                </div>
+            </div>
             <div class="overflow-hidden sm:rounded-lg">
                 <div class="py-1 lg:py-2">
                     <form method="POST" action="{{ route('admin.survey.update', ['survey' => $survey->id]) }}"

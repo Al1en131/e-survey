@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <div class=" py-9 max-md:py-6">
+    <div class="">
         <div class="items-center mb-6 max-md:mb-4 max-md:contents hidden">
             <div class="flex items-center">
                 <div class="rounded-lg bg-primary p-[5px]">
@@ -19,8 +19,7 @@
                 <h5 class="text-lg text-secondary max-md:text-base my-2 mb-6">{{ $survey->title }}</h5>
             </div>
         </div>
-        <div
-            class=" mb-6 max-md:mb-4 max-md:hidden border-2 border-secondary rounded-xl p-4">
+        <div class=" mb-6 max-md:mb-4 max-md:hidden">
             <div class="font-agrandir">
                 <div class="flex justify-between items-center">
                     <h1 class=" text-4xl text-secondary font-medium pb-2 max-md:text-lg max-md:pb-0">Participant
@@ -39,19 +38,17 @@
                         </div>
                     </div>
                 </div>
-
-                <h5 class="text-lg text-slate-500 mb-1">{{ $survey->title }}</h5>
-                <div class="items-center lg:flex max-lg:block max-lg:space-y-3 lg:justify-between gap-4 w-full">
-                    <div class="bg-primary border-2 rounded-xl border-secondary p-4 text-left">
-                        <p class="text-lg">Total :</p>
-                        <h5 class="text-base text-slate-500"> {{ $survey->participant->count() }}</h5>
-                    </div>
-                    <div class="bg-primary border-2 rounded-xl border-secondary p-4 text-left">
-                        <p class="text-lg">Description :</p>
-                        <h5 class="text-base text-slate-500"> {{ $survey->description }}</h5>
-                    </div>
-
-                </div>
+            </div>
+        </div>
+        <div class="mb-8 px-4 py-2 bg-primary flex items-center gap-12 rounded-lg">
+            <div class="flex items-center space-x-3">
+                <img src="/assets/image/people.png" alt="People Icon" class="w-52 h-52 object-cover rounded-full" />
+            </div>
+            <div class="text-white">
+                <h2 class="text-xl font-semibold mb-2">{{ $survey->title }}</h2>
+                <p class="text-sm leading-relaxed max-w-2xl">
+                    {{ $survey->description }}
+                </p>
             </div>
         </div>
         <div class="overflow-x-auto rounded-xl">
