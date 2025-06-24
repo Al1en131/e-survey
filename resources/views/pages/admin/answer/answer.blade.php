@@ -19,11 +19,12 @@
                     </div>
                 </div>
             </div>
-            <div class="flex gap-12 items-center px-8 bg-primary rounded-lg">
-                <div class="flex items-center space-x-3">
-                    <img src="/assets/image/people.png" alt="People Icon" class="w-52 h-52 object-cover rounded-full" />
+            <div class="mb-8 px-4 bg-primary flex items-center gap-3 rounded-lg">
+                <div class="flex items-center">
+                    <img src="/assets/image/people-4.png" alt="People Icon"
+                        class="w-64 h-64 object-cover rounded-full" />
                 </div>
-                <div class="flex ms-1 max-md:block w-full gap-4 py-4 text-white ">
+                <div class="flex ms-1 max-md:block w-full gap-8 py-4 text-white ">
                     <div class="block w-1/2 max-md:w-full">
                         <div class="block my-4">
                             <p class="text-lg mb-1 font-semibold">Participant Name :</p>

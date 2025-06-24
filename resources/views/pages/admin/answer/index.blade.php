@@ -6,9 +6,9 @@
                 </h1>
             </div>
         </div>
-        <div class="mb-8 px-4 py-2 bg-primary flex items-center gap-12 rounded-lg">
-            <div class="flex items-center space-x-3">
-                <img src="/assets/image/people.png" alt="People Icon" class="w-52 h-52 object-cover rounded-full" />
+        <div class="mb-8 pr-4 bg-primary flex items-center gap-3 rounded-lg">
+            <div class="flex items-center">
+                <img src="/assets/image/people-4.png" alt="People Icon" class="w-64 h-64 object-cover rounded-full" />
             </div>
             <div class="text-white">
                 <h2 class="text-xl font-semibold mb-2">Survey Participation Overview</h2>

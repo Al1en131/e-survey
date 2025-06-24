@@ -33,7 +33,7 @@
                 </div>
             @endif
 
-            <div class="mb-8 px-4 py-2 bg-primary flex items-center gap-12 rounded-lg">
+            <div class="mb-8 px-8 py-2 bg-primary flex items-center gap-12 rounded-lg">
                 <div class="flex items-center space-x-3">
                     <img src="/assets/image/people.png" alt="People Icon" class="w-52 h-52 object-cover rounded-full" />
                 </div>

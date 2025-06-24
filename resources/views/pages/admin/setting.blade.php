@@ -19,9 +19,9 @@
                     </div>
                 </div>
             </div>
-            <div class="mb-8 px-8 py-2 bg-primary flex items-center gap-12 rounded-lg">
+            <div class="mb-8 pr-8 bg-primary flex items-center gap-6 rounded-lg">
                 <div class="flex items-center space-x-3">
-                    <img src="/assets/image/people.png" alt="People Icon" class="w-52 h-52 object-cover rounded-full" />
+                    <img src="/assets/image/people-3.png" alt="People Icon" class="w-64 h-64 object-cover rounded-full" />
                 </div>
                 <div class="text-white">
                     <h2 class="text-xl font-semibold mb-2">Company Profile Settings</h2>
