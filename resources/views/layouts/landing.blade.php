@@ -68,7 +68,7 @@
         <main class="px-6 max-md:px-10 flex-grow">
             {{ $slot }}
         </main>
-        <footer class="py-7 text-center text-sm text-white bg-secondary bottom-0">
+        <footer class="py-3 text-center text-sm text-white bg-secondary bottom-0">
             @include('layouts.footer')
         </footer>
     </div>

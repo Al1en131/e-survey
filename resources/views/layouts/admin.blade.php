@@ -38,7 +38,7 @@
                 {{ $slot }}
             </div>
         </main>
-        <footer class="py-7 text-center text-sm text-white bg-secondary">
+        <footer class="py-3 text-center text-sm text-white bg-secondary">
             @include('layouts.footer')
         </footer>
     </div>

@@ -1,5 +1,5 @@
 <nav class="bg-secondary border-gray-200 dark:bg-secondary sticky">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
         <div class="shrink-0 flex items-center">
             <a href="{{ route('admin.index') }}">
                 @foreach ($management as $item)
@@ -65,20 +65,20 @@
                 class="flex flex-col font-medium p-4 md:p-0 mt-4  rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                 <li>
                     <a href="{{ route('admin.index') }}"
-                        class="{{ request()->is('admin/dashboard') ? 'text-primary font-bold' : 'text-white' }} block py-2 px-3 rounded md:p-0 hover:text-primary"
+                        class="{{ request()->is('admin/dashboard') ? 'text-primary font-semibold border-b-2 border-b-primary' : 'text-white' }} block py-2 px-3 md:p-0 hover:text-primary"
                         aria-current="page">Dashboard</a>
                 </li>
                 <li>
                     <a href="{{ route('admin.survey.index') }}"
-                        class="{{ request()->is('admin/survey/*') ? 'text-primary font-bold' : 'text-white' }} block py-2 px-3 rounded md:p-0 hover:text-primary">Survey</a>
+                        class="{{ request()->is('admin/survey/*') ? 'text-primary font-semibold border-b-2 border-b-primary' : 'text-white' }} block py-2 px-3 md:p-0 hover:text-primary">Survey</a>
                 </li>
                 <li>
                     <a href="{{ route('admin.answer.index') }}"
-                        class="{{ request()->is('admin/answer/*') ? 'text-primary font-bold' : 'text-white' }} block py-2 px-3 rounded md:p-0 dark:text-white hover:text-primary">Answer</a>
+                        class="{{ request()->is('admin/answer/*') ? 'text-primary font-semibold border-b-2 border-b-primary' : 'text-white' }} block py-2 px-3 md:p-0 dark:text-white hover:text-primary">Answer</a>
                 </li>
                 <li class="md:hidden">
                     <a href="{{ route('admin.management.index') }}"
-                        class="{{ request()->is('admin/management') ? 'text-primary font-bold' : 'text-white' }} block py-2 px-3 rounded md:p-0 hover:text-primary">Setting</a>
+                        class="{{ request()->is('admin/management') ? 'text-primary font-semibold border-b-2 border-b-primary' : 'text-white' }} block py-2 px-3 md:p-0 hover:text-primary">Setting</a>
                 </li>
             </ul>
         </div>
