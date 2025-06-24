@@ -12,8 +12,8 @@
 </head>
 
 <body class=" antialiased h-full">
-    <div class="min-h-screen flex flex-col ">
-        <header class="items-center gap-2 flex px-6 sticky">
+    <div class="min-h-screen flex flex-col  ">
+        <header class="items-center gap-2 flex sticky sm:px-6 lg:px-14">
             <div class="flex lg:justify-start">
                 @foreach ($management as $item)
                     @if ($item->hasmedia('management'))
@@ -26,7 +26,7 @@
                 @endforeach
             </div>
             @if (Route::has('login'))
-                <nav class="-mx-3 flex flex-1 justify-end">
+                <nav class="-mx-3 flex flex-1  justify-end">
                     @auth
                         @role('admin')
                             <a class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
@@ -60,7 +60,7 @@
                 </nav>
             @endif
         </header>
-        <main class="px-6 max-md:px-10 flex-grow">
+        <main class=" flex-grow">
             {{ $slot }}
         </main>
         <footer class="py-3 text-center text-sm text-white bg-secondary bottom-0">

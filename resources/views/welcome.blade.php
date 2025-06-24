@@ -1,9 +1,9 @@
 <x-landing-layout>
     <div class="bg-white text-black/50 ">
-        <div class=" items-center justify-center">
+        <div class=" items-center justify-center sm:px-6 lg:px-14">
             <div class="w-full">
                 <div class="mt-8 max-md:mt-6 items-center">
-                    <div class="justify-between relative flex">
+                    <div class="justify-between items-center relative flex">
                         <div class="max-md:mt-4 max-md:mb-10">
                             <div class="absolute max-lg:hidden"><svg width="690" height="247" viewBox="0 0 651 247"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,15 +21,14 @@
                             </div>
                             @foreach ($management as $item)
                                 <h1
-                                    class="text-[54px] text-[#2D2D2D] max-md:hidden top-0 md:w-[620px] absolute max-md:text-4xl font-bold max-md:mx-2 max-md:mt-12 mt-[51px] ml-[50px] leading-[78px]">
+                                    class="text-[54px] text-[#2D2D2D] max-md:hidden top-4 md:w-[620px] absolute max-md:text-4xl font-bold max-md:mx-2 max-md:mt-12 mt-[51px] ml-[50px] leading-[78px]">
                                     {{ $item->title }}</h1>
                                 <p
                                     class="mt-[250px] ml-[50px] text-xl max-md:hidden max-md:mt-[150px] text-[#2D2D2D] max-md:mx-2 max-md:text-10">
                                     {{ $item->description }}</p>
 
                                 <div class="max-md:contents hidden ">
-                                    <div
-                                        class="">
+                                    <div class="">
                                         <h1
                                             class="text-xl text-[#2D2D2D] text-center md:w-[620px] max-md:text-4xl font-bold leading-[78px]">
                                             {{ $item->title }}</h1>
@@ -98,5 +97,68 @@
                 </div>
             </div>
         </div>
+        <div class="bg-primary p-14 mb-8 mt-16 w-full">
+            <div class="flex justify-center items-center gap-4 text-white">
+                <p class="text-3xl font-semibold pr-2">All the amazing surveys start here, ready to shape better decisions
+                </p>
+
+                <div class="border-r border-r-gray-300 pr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6 mb-2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" />
+                    </svg>
+                    <p class="text-sm">Empowering businesses to create meaningful surveys with ease.</p>
+                </div>
+
+                <div class="pl-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6 mb-2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+                    </svg>
+
+                    <p class="text-sm">Collect responses, analyze results, and grow smarter decisions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-16 mb-8 px-14">
+            <p class="mb-6 text-secondary text-4xl text-center font-bold">How to Create Your Survey</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-white mt-10">
+                <!-- Step 1 -->
+                <div class="bg-primary p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl font-bold text-white mb-2">01</div>
+                    <h3 class="text-lg font-semibold mb-2">Set Up Your Survey</h3>
+                    <p class="text-sm text-gray-300">Start by giving your survey a title and description. Define the
+                        purpose and target participants to ensure clarity and focus.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-primary p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl font-bold text-white mb-2">02</div>
+                    <h3 class="text-lg font-semibold mb-2">Add Your Questions</h3>
+                    <p class="text-sm text-gray-300">Insert different types of questions multiple choice, ratings,
+                        short answers based on the information you need to collect.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-primary p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl font-bold text-white mb-2">03</div>
+                    <h3 class="text-lg font-semibold mb-2">Customize Survey Settings</h3>
+                    <p class="text-sm text-gray-300">Adjust survey flow, enable anonymity, set deadlines, and add logic
+                        to personalize the participant experience.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-primary p-6 rounded-lg shadow-lg">
+                    <div class="text-4xl font-bold text-white mb-2">04</div>
+                    <h3 class="text-lg font-semibold mb-2">Publish & Share</h3>
+                    <p class="text-sm text-gray-300">Once ready, publish your survey and share the link. Track
+                        responses in real-time and get insights instantly.</p>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 </x-landing-layout>
