@@ -1,5 +1,5 @@
 <nav class="bg-secondary border-gray-200 dark:bg-secondary sticky">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-16 py-2">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto max-lg:px-6 lg:px-16 py-2">
         <div class="shrink-0 flex items-center">
             <a href="{{ route('admin.index') }}">
                 @foreach ($management as $item)
@@ -50,7 +50,7 @@
                 </ul>
             </div>
             <button data-collapse-toggle="navbar-user" type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                class="inline-flex items-center py-2 justify-center text-sm text-white hover:text-primary md:hidden"
                 aria-controls="navbar-user" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"

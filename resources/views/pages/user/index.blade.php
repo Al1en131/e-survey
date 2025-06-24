@@ -22,7 +22,7 @@
                     Click Accept Invitation button to
                     enrol into the program.</p>
                 <span><b class="font-semibold">Survey Name : </b>{{ $survey->title }}</span>
-                <button class="rounded-lg bg-primary py-4 px-8 text-sm font-bold text-white md:py- md:text-lg">
+                <button class="rounded-lg bg-primary py-4 hover:opacity-90 px-8 text-sm font-bold text-white md:py- md:text-lg">
                     <a href="{{ route('home.survey.start', ['slug' => $survey->slug]) }}">
                         Accept Invitation
                     </a>

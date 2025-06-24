@@ -28,13 +28,13 @@
         @include('layouts.navigation-admin')
         @if (isset($header))
             <header class="bg-white shadow">
-                <div class="mx-auto px-4 sm:px-6 lg:px-16">
+                <div class="max-lg:px-6 lg:px-16">
                     {{ $header }}
                 </div>
             </header>
         @endif
         <main class="flex-grow">
-            <div class="sm:px-6 lg:px-16">
+            <div class="max-lg:px-6 lg:px-16">
                 {{ $slot }}
             </div>
         </main>

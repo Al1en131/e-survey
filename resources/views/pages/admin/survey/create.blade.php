@@ -1,6 +1,6 @@
 <x-admin-layout>
-    <div class="py-9 max-md:px-5 max-md:py-6">
-        <div class="mx-auto sm:px-6 lg:px-20">
+    <div class="py-9 max-md:py-6">
+        <div class="mx-auto">
             <div class="flex items-center justify-between pb-[31px] max-md:pb-4">
                 <div class="">
                     <h1 class="pb-2 text-4xl font-medium text-secondery max-md:pb-0 max-md:text-lg">

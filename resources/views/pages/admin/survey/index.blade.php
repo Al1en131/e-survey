@@ -37,15 +37,15 @@
             </div>
             <div class="text-gray-900">
                 <div class="relative sm:rounded-lg">
-                    <div class="overflow-x-auto">
+                    <div class="overflow-x-auto rounded-xl">
                         <table class="w-full text-base text-left rtl:text-right text-gray-500 dark:text-gray-400">
                             <thead class="text-base text-white bg-secondary dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
-                                    <th scope="col" class="px-6 py-3 ">Survey Name</th>
-                                    <th scope="col" class="px-6 py-3 text-center">Start Date</th>
-                                    <th scope="col" class="px-6 py-3 text-center">End Date</th>
-                                    <th scope="col" class="px-6 py-3 text-center w-12">Link</th>
-                                    <th scope="col" class="px-6 py-3 text-center w-10">Action</th>
+                                    <th scope="col" class="px-6 py-3 whitespace-nowrap ">Survey Name</th>
+                                    <th scope="col" class="px-6 py-3 text-center whitespace-nowrap">Start Date</th>
+                                    <th scope="col" class="px-6 py-3 text-center whitespace-nowrap">End Date</th>
+                                    <th scope="col" class="px-6 py-3 text-center whitespace-nowrap w-12">Link</th>
+                                    <th scope="col" class="px-6 py-3 text-center whitespace-nowrap w-10">Action</th>
                                 </tr>
                             </thead>
                             <tbody>

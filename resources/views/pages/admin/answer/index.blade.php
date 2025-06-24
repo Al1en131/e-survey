@@ -10,7 +10,7 @@
             <table class="w-full text-base text-left text-gray-500 rtl:text-right">
                 <thead class="text-base text-white bg-secondary">
                     <tr>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" class="px-6 whitespace-nowrap py-3">
                             Survey Name
                         </th>
                         <th scope="col" class="text-center px-6">
