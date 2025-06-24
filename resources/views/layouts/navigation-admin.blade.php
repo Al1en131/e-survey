@@ -1,5 +1,5 @@
 <nav class="bg-secondary border-gray-200 dark:bg-secondary sticky">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-16 py-2">
         <div class="shrink-0 flex items-center">
             <a href="{{ route('admin.index') }}">
                 @foreach ($management as $item)

@@ -1,9 +1,9 @@
 <x-admin-layout>
-    <div class="flex flex-col min-h-full max-md:px-6 lg:px-16 py-9 max-md:py-6">
+    <div class="flex flex-col min-h-full py-9 max-md:py-6">
         <div class="max-w-full flex-grow">
             <div class="flex justify-between items-center mb-6 max-md:mb-4">
                 <div class="font-Poppins">
-                    <h1 class="text-4xl text-[#475569] font-medium pb-2 max-md:text-lg max-md:pb-0">Survey Data</h1>
+                    <h1 class="text-4xl text-secondery font-medium pb-2 max-md:text-lg max-md:pb-0">Survey Data</h1>
                 </div>
                 <div class="hidden md:justify-end w-1/3 max-md:contents items-center">
                     <a href="{{ route('admin.survey.create') }}">
@@ -38,8 +38,8 @@
             <div class="text-gray-900">
                 <div class="relative sm:rounded-lg">
                     <div class="overflow-x-auto">
-                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-white uppercase bg-secondary dark:bg-gray-700 dark:text-gray-400">
+                        <table class="w-full text-base text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead class="text-base text-white bg-secondary dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">Survey Name</th>
                                     <th scope="col" class="px-6 py-3">Start Date</th>

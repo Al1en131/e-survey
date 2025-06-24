@@ -11,7 +11,7 @@
                         </svg>
                     </a>
                 </div>
-                <h1 class=" text-4xl text-[#475569] font-medium pb-2 max-md:text-lg max-md:pb-0 ">Participant Data
+                <h1 class=" text-4xl text-secondery font-medium pb-2 max-md:text-lg max-md:pb-0 ">Participant Data
                 </h1>
             </div>
             <div class="font-Poppins">
@@ -20,7 +20,7 @@
         </div>
         <div class="flex items-center justify-between mb-6 max-md:mb-4 max-md:hidden">
             <div class="font-Poppins">
-                <h1 class=" text-4xl text-[#475569] font-medium pb-2 max-md:text-lg max-md:pb-0">Participant Data
+                <h1 class=" text-4xl text-secondery font-medium pb-2 max-md:text-lg max-md:pb-0">Participant Data
                 </h1>
                 <h5 class="text-lg text-slate-500">{{ $survey->title }}</h5>
             </div>
