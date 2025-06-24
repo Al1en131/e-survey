@@ -1,8 +1,8 @@
 <x-admin-layout>
-    <div class="flex flex-col min-h-full py-9 max-md:py-6">
+    <div class="flex flex-col min-h-full ">
         <div class="max-w-full flex-grow">
             <div class="flex justify-between items-center mb-6 max-md:mb-4">
-                <div class="font-Poppins">
+                <div class="font-agrandir">
                     <h1 class="text-4xl text-secondery font-medium pb-2 max-md:text-lg max-md:pb-0">Survey Data</h1>
                 </div>
                 <div class="hidden md:justify-end w-1/3 max-md:contents items-center">
@@ -25,8 +25,8 @@
                     </div>
                     <input type="text" id="table-search" class="block px-5 ps-10 text-sm py-2.5 text-gray-900 border border-gray-400 rounded-lg w-full bg-gray-50 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary" placeholder="Search for items">
                 </div>
-                <div class="md:flex md:justify-end w-1/4 md:ml-2 max-md:hidden">
-                    <a href="{{ route('admin.survey.create') }}">
+                <div class="md:flex md:justify-end w-4/12 md:ml-2 max-md:hidden">
+                    <a href="{{ route('admin.survey.create') }}" class="w-full text-center flex justify-center">
                         <button type="button" class="focus:outline-none text-white flex items-center bg-primary hover:bg-secondary rounded-lg text-sm px-12 py-2.5 w-full">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />

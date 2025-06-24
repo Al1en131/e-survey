@@ -1,7 +1,7 @@
 <x-admin-layout>
     <div class=" py-9 max-md:py-6">
-        <div class="items-center justify-between mb-6 max-md:mb-4 max-md:contents hidden">
-            <div class="flex items-center gap-3">
+        <div class="items-center mb-6 max-md:mb-4 max-md:contents hidden">
+            <div class="flex items-center">
                 <div class="rounded-lg bg-primary p-[5px]">
                     <a class="" href="{{ route('admin.answer.index') }}">
                         <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -13,30 +13,48 @@
                 </div>
                 <h1 class=" text-4xl text-secondery font-medium pb-2 max-md:text-lg max-md:pb-0 ">Participant Data
                 </h1>
+
             </div>
-            <div class="font-Poppins">
-                <h5 class="text-lg text-slate-500 max-md:text-base my-2 mb-6">{{ $survey->title }}</h5>
+            <div class="font-agrandir">
+                <h5 class="text-lg text-secondary max-md:text-base my-2 mb-6">{{ $survey->title }}</h5>
             </div>
         </div>
-        <div class="flex items-center justify-between mb-6 max-md:mb-4 max-md:hidden">
-            <div class="font-Poppins">
-                <h1 class=" text-4xl text-secondery font-medium pb-2 max-md:text-lg max-md:pb-0">Participant Data
-                </h1>
-                <h5 class="text-lg text-slate-500">{{ $survey->title }}</h5>
-            </div>
-            <div class="flex items-center justify-end">
-                <div class="rounded-lg bg-primary p-2">
-                    <a class="" href="{{ route('admin.answer.index') }}">
-                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
-                        </svg>
-                    </a>
+        <div
+            class=" mb-6 max-md:mb-4 max-md:hidden border-2 border-secondary rounded-xl p-4">
+            <div class="font-agrandir">
+                <div class="flex justify-between items-center">
+                    <h1 class=" text-4xl text-secondary font-medium pb-2 max-md:text-lg max-md:pb-0">Participant
+                        Data
+                    </h1>
+                    <div class="flex items-center justify-end">
+
+                        <div class="rounded-lg bg-primary p-2">
+                            <a class="" href="{{ route('admin.answer.index') }}">
+                                <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 class="text-lg text-slate-500 mb-1">{{ $survey->title }}</h5>
+                <div class="items-center lg:flex max-lg:block max-lg:space-y-3 lg:justify-between gap-4 w-full">
+                    <div class="bg-primary border-2 rounded-xl border-secondary p-4 text-left">
+                        <p class="text-lg">Total :</p>
+                        <h5 class="text-base text-slate-500"> {{ $survey->participant->count() }}</h5>
+                    </div>
+                    <div class="bg-primary border-2 rounded-xl border-secondary p-4 text-left">
+                        <p class="text-lg">Description :</p>
+                        <h5 class="text-base text-slate-500"> {{ $survey->description }}</h5>
+                    </div>
+
                 </div>
             </div>
         </div>
-        <div class="overflow-x-auto">
+        <div class="overflow-x-auto rounded-xl">
             <table class="w-full text-base text-left text-gray-500 rtl:text-right">
                 <thead class="text-base text-white bg-secondary">
                     <tr>

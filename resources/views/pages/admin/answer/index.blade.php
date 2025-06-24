@@ -1,12 +1,12 @@
 <x-admin-layout>
     <div class=" py-9 max-md:py-6">
         <div class="flex items-center justify-between mb-6 max-md:mb-4">
-            <div class="font-Poppins">
+            <div class="font-agrandir">
                 <h1 class=" text-4xl text-secondary font-medium pb-2 max-md:text-lg max-md:pb-0">Answer Data
                 </h1>
             </div>
         </div>
-        <div class="overflow-x-auto">
+        <div class="overflow-x-auto rounded-xl">
             <table class="w-full text-base text-left text-gray-500 rtl:text-right">
                 <thead class="text-base text-white bg-secondary">
                     <tr>

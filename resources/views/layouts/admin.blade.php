@@ -23,26 +23,34 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="antialiased   ">
-    <div class="flex flex-col min-h-screen">
-        @include('layouts.navigation-admin')
-        @if (isset($header))
-            <header class="bg-white shadow">
-                <div class="max-lg:px-6 lg:px-16">
-                    {{ $header }}
-                </div>
-            </header>
-        @endif
-        <main class="flex-grow">
-            <div class="max-lg:px-6 lg:px-16">
-                {{ $slot }}
-            </div>
-        </main>
-        <footer class="py-3 text-center text-sm text-white bg-secondary">
-            @include('layouts.footer')
-        </footer>
-    </div>
+<body class="antialiased">
+    <div class="flex">
 
+        {{-- SIDEBAR --}}
+        @include('layouts.navigation-admin')
+
+        {{-- MAIN CONTENT --}}
+        <div class="flex flex-col min-h-screen flex-1 md:ml-64 transition-all duration-300"
+            :class="sidebarOpen ? 'ml-64' : 'ml-0'">
+            @if (isset($header))
+                <header class="bg-white shadow">
+                    <div class="max-lg:px-6 lg:px-16 py-4">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
+
+            <main class="flex-1">
+                <div class="max-lg:px-6 lg:px-8 py-6">
+                    {{ $slot }}
+                </div>
+            </main>
+
+            <footer class="py-3 text-center text-sm text-white bg-secondary">
+                @include('layouts.footer')
+            </footer>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @if (session('success'))
@@ -67,17 +75,17 @@
             const surveyTitles = document.querySelectorAll(
                 '.survey-title'); // tambahkan class 'survey-title' pada judul survey
             const errorMessage = document.getElementById('error-message');
-    
+
             searchInput.addEventListener('input', function() {
                 const query = this.value.toLowerCase().trim(); // Trim dan ubah menjadi huruf kecil
-    
+
                 let hasError = true; // Set default keadaan error
-    
+
                 surveyTitles.forEach(title => {
                     const surveyTitle = title.textContent.toLowerCase(); // Ambil teks judul survey
                     const surveyRow = title.closest(
                         'tr'); // Dapatkan baris yang berisi judul survey
-    
+
                     if (surveyTitle.includes(query)) { // Cocokkan dengan query
                         surveyRow.style.display = ''; // Tampilkan baris jika cocok
                         hasError = false; // Set keadaan error menjadi false karena judul ditemukan
@@ -85,23 +93,23 @@
                         surveyRow.style.display = 'none'; // Sembunyikan jika tidak cocok
                     }
                 });
-    
+
                 // Tampilkan atau sembunyikan pesan kesalahan
                 errorMessage.classList.toggle('hidden', !hasError);
             });
-    
+
             // Ambil semua tombol dengan class "delete"
             const deleteButtons = document.querySelectorAll('.delete');
-    
+
             deleteButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     e.preventDefault(); // Mencegah tindakan default tautan
-    
+
                     const surveyId = this.getAttribute(
                         'data-id'); // Ambil ID survey dari atribut data-id
                     const deleteUrl =
                         `/admin/survey/${surveyId}/delete`; // Ganti dengan rute Laravel Anda
-    
+
                     Swal.fire({
                         title: "Are you sure?",
                         text: "You won't be able to revert this!",
@@ -118,33 +126,33 @@
                     });
                 });
             });
-    
+
             // Ambil semua tombol dengan class "copy-button"
             const copyButtons = document.querySelectorAll('.copy-button');
-    
+
             copyButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     e.preventDefault(); // Mencegah tindakan default tautan
-    
+
                     // Ambil nilai dari atribut data-slug
                     const slug = this.getAttribute('data-slug');
-    
+
                     // Buat elemen textarea
                     const textarea = document.createElement('textarea');
                     textarea.value = slug;
-    
+
                     // Pastikan textarea tidak terlihat dan tambahkan ke body
                     textarea.style.position = 'fixed';
                     textarea.style.opacity = 0;
                     document.body.appendChild(textarea);
-    
+
                     // Pilih dan salin teks
                     textarea.select();
                     document.execCommand('copy');
-    
+
                     // Hapus textarea
                     document.body.removeChild(textarea);
-    
+
                     // Optional: Berikan notifikasi kepada pengguna bahwa teks telah disalin
                     Swal.fire({
                         title: "Copied",
