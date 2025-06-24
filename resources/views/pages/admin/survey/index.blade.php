@@ -41,9 +41,9 @@
                         <table class="w-full text-base text-left rtl:text-right text-gray-500 dark:text-gray-400">
                             <thead class="text-base text-white bg-secondary dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
-                                    <th scope="col" class="px-6 py-3">Survey Name</th>
-                                    <th scope="col" class="px-6 py-3">Start Date</th>
-                                    <th scope="col" class="px-6 py-3">End Date</th>
+                                    <th scope="col" class="px-6 py-3 ">Survey Name</th>
+                                    <th scope="col" class="px-6 py-3 text-center">Start Date</th>
+                                    <th scope="col" class="px-6 py-3 text-center">End Date</th>
                                     <th scope="col" class="px-6 py-3 text-center w-12">Link</th>
                                     <th scope="col" class="px-6 py-3 text-center w-10">Action</th>
                                 </tr>
@@ -52,8 +52,8 @@
                                 @foreach ($surveys as $survey)
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                         <th scope="row" class="px-6 py-4 text-gray-900 whitespace-wrap font-normal survey-title">{{ $survey->title }}</th>
-                                        <td class="px-6 py-4">{{ date('d M Y', strtotime($survey->start_date)) }}</td>
-                                        <td class="px-6 py-4">{{ date('d M Y', strtotime($survey->end_date)) }}</td>
+                                        <td class="px-6 py-4 text-center">{{ date('d M Y', strtotime($survey->start_date)) }}</td>
+                                        <td class="px-6 py-4 text-center">{{ date('d M Y', strtotime($survey->end_date)) }}</td>
                                         <td class="px-6 py-4 w-12 content-center">
                                             <a href="#" class="bg-primary px-4 py-3 flex gap-2 items-center text-white rounded-lg text-nowrap copy-button w-full" data-slug="{{ config('app.url') . '/' . 'survey/' . $survey->slug }}">
                                                 <span>

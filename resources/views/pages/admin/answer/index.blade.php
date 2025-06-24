@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <div class="max-md:px-6 lg:px-16 py-9 max-md:py-6">
+    <div class=" py-9 max-md:py-6">
         <div class="flex items-center justify-between mb-6 max-md:mb-4">
             <div class="font-Poppins">
                 <h1 class=" text-4xl text-secondary font-medium pb-2 max-md:text-lg max-md:pb-0">Answer Data
@@ -7,8 +7,8 @@
             </div>
         </div>
         <div class="overflow-x-auto">
-            <table class="w-full text-sm text-left text-gray-500 rtl:text-right">
-                <thead class="text-xs text-white uppercase bg-secondary">
+            <table class="w-full text-base text-left text-gray-500 rtl:text-right">
+                <thead class="text-base text-white bg-secondary">
                     <tr>
                         <th scope="col" class="px-6 py-3">
                             Survey Name

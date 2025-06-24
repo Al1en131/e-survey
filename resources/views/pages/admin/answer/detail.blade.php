@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <div class="max-md:px-6 lg:px-16 py-9 max-md:py-6">
+    <div class=" py-9 max-md:py-6">
         <div class="items-center justify-between mb-6 max-md:mb-4 max-md:contents hidden">
             <div class="flex items-center gap-3">
                 <div class="rounded-lg bg-primary p-[5px]">
@@ -37,8 +37,8 @@
             </div>
         </div>
         <div class="overflow-x-auto">
-            <table class="w-full text-sm text-left text-gray-500 rtl:text-right">
-                <thead class="text-xs text-white uppercase bg-secondary">
+            <table class="w-full text-base text-left text-gray-500 rtl:text-right">
+                <thead class="text-base text-white bg-secondary">
                     <tr>
                         <th scope="col" class="px-6 py-3">
                             Name
