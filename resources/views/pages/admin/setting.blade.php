@@ -1,27 +1,19 @@
 <x-admin-layout>
     <div class="">
         <div class="">
-            <div class="flex items-center justify-between pb-[31px] max-md:pb-4">
+            <div class="flex items-center justify-between pb-[28px] max-md:pb-4">
                 <div class="">
                     <h1 class="pb-2 text-4xl font-medium text-secondary max-md:pb-0 max-md:text-lg">
                         Setting
                     </h1>
                 </div>
-                <div class="flex items-center justify-end">
-                    <div class="rounded-lg bg-primary p-2">
-                        <a class="" href="{{ route('admin.survey.index') }}">
-                            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
-                            </svg>
-                        </a>
-                    </div>
+                <div class="text-right text-sm text-secondary font-medium max-md:text-xs" id="current-date">
                 </div>
             </div>
             <div class="mb-8 pr-8 bg-primary flex items-center gap-6 rounded-lg">
                 <div class="flex items-center space-x-3">
-                    <img src="/assets/image/people-3.png" alt="People Icon" class="w-64 h-64 object-cover rounded-full" />
+                    <img src="/assets/image/people-3.png" alt="People Icon"
+                        class="w-64 h-64 object-cover rounded-full" />
                 </div>
                 <div class="text-white">
                     <h2 class="text-xl font-semibold mb-2">Company Profile Settings</h2>

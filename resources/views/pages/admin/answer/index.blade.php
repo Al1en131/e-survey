@@ -2,8 +2,11 @@
     <div class="">
         <div class="flex items-center justify-between mb-6 max-md:mb-4">
             <div class="font-agrandir">
-                <h1 class=" text-4xl text-secondary font-medium pb-2 max-md:text-lg max-md:pb-0">Answer Data
+                <h1 class="text-4xl text-secondary font-medium pb-2 max-md:text-lg max-md:pb-0">
+                 Answer 
                 </h1>
+            </div>
+            <div class="text-right text-sm text-secondary font-medium max-md:text-xs" id="current-date">
             </div>
         </div>
         <div class="mb-8 pr-4 bg-primary flex items-center gap-3 rounded-lg">

@@ -1,21 +1,25 @@
 <x-admin-layout>
     <div class="flex flex-col min-h-full ">
         <div class="max-w-full flex-grow">
-            <div class="flex justify-between items-center mb-6 max-md:mb-4">
+            <div class="flex items-center justify-between mb-6 max-md:mb-4">
                 <div class="font-agrandir">
-                    <h1 class="text-4xl text-secondary font-medium pb-2 max-md:text-lg max-md:pb-0">Survey Data</h1>
+                    <h1 class="text-4xl text-secondary font-medium pb-2 max-md:text-lg max-md:pb-0">
+                        Survey
+                    </h1>
                 </div>
-                <div class="hidden md:justify-end w-1/3 max-md:contents items-center">
-                    <a href="{{ route('admin.survey.create') }}">
-                        <button type="button"
-                            class="focus:outline-none text-white flex items-center bg-primary hover:bg-secondary rounded-lg text-sm px-8 py-2.5 max-md:px-4 w-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-5 h-5 mr-2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                            </svg> <span>Add survey</span>
-                        </button>
-                    </a>
+                <div class="text-right text-sm text-secondary font-medium max-md:text-xs" id="current-date">
                 </div>
+            </div>
+            <div class="hidden md:justify-end w-1/3 max-md:contents items-center">
+                <a href="{{ route('admin.survey.create') }}">
+                    <button type="button"
+                        class="focus:outline-none text-white flex items-center bg-primary hover:bg-secondary rounded-lg text-sm px-8 py-2.5 max-md:px-4 w-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-5 h-5 mr-2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg> <span>Add survey</span>
+                    </button>
+                </a>
             </div>
             <div class="mb-8 px-8 py-2 bg-primary flex items-center gap-12 rounded-lg">
                 <div class="flex items-center space-x-3">

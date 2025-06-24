@@ -163,6 +163,25 @@
             });
         });
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const dateEl = document.getElementById("current-date");
+            const today = new Date();
+
+            const weekday = today.toLocaleDateString('en-US', {
+                weekday: 'long'
+            });
+            const day = today.toLocaleDateString('en-US', {
+                day: '2-digit'
+            });
+            const month = today.toLocaleDateString('en-US', {
+                month: 'short'
+            });
+            const year = today.getFullYear();
+
+            dateEl.textContent = `${weekday}, ${day} ${month} ${year}`;
+        });
+    </script>
 </body>
 
 </html>
