@@ -3,7 +3,7 @@
         <div class="">
             <div class="flex items-center justify-between pb-[31px] max-md:pb-4">
                 <div class="">
-                    <h1 class="pb-2 text-4xl font-medium text-secondery max-md:pb-0 max-md:text-lg">
+                    <h1 class="pb-2 text-4xl font-medium text-secondary max-md:pb-0 max-md:text-lg">
                         Setting
                     </h1>
                 </div>
