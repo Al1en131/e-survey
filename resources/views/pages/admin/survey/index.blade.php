@@ -36,10 +36,12 @@
             </div>
 
 
-            <div class="rounded-lg mb-7 max-md:mb-4 flex justify-between items-center">
+            <div class="rounded-lg mb-7 max-md:mb-4 flex justify-between items-center gap-3">
                 <label for="table-search" class="sr-only">Search</label>
-                <div class="relative mt-1 items-center w-full">
-                    <div class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
+
+                <!-- Search Input -->
+                <div class="relative flex-1">
+                    <div class="absolute inset-y-0 left-0 flex items-center ps-3 pointer-events-none">
                         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -47,21 +49,23 @@
                         </svg>
                     </div>
                     <input type="text" id="table-search"
-                        class="block px-5 ps-10 text-sm py-2.5 text-gray-900 border border-gray-400 rounded-lg w-full bg-gray-50 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
+                        class="block w-full px-5 ps-10 text-sm py-2.5 text-gray-900 border border-gray-400 rounded-lg bg-gray-50 focus:ring-primary focus:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary"
                         placeholder="Search for items">
                 </div>
-                <div class="md:flex md:justify-end w-4/12 md:ml-2 max-md:hidden">
-                    <a href="{{ route('admin.survey.create') }}" class="w-full text-center flex justify-center">
-                        <button type="button"
-                            class="focus:outline-none text-white flex items-center bg-primary hover:bg-secondary rounded-lg text-sm px-12 py-2.5 w-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                            </svg> <span>Add survey</span>
-                        </button>
-                    </a>
-                </div>
+
+                <!-- Button -->
+                <a href="{{ route('admin.survey.create') }}">
+                    <button type="button"
+                        class="flex items-center justify-center gap-2 text-white bg-primary hover:bg-secondary rounded-lg text-sm px-5 py-2.5 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                        <span>Add Survey</span>
+                    </button>
+                </a>
             </div>
+
             <div class="text-gray-900">
                 <div class="relative sm:rounded-lg">
                     <div class="overflow-x-auto rounded-xl">

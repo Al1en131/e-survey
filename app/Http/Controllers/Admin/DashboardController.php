@@ -14,7 +14,8 @@ class DashboardController extends Controller
     {
         $totalSurveys = Survey::count();
         $totalParticipants = Participant::count();
+        $topSurveys = Survey::latest()->take(5)->get();
 
-        return view('pages.admin.index', compact('totalSurveys', 'totalParticipants'));
+        return view('pages.admin.index', compact('totalSurveys', 'totalParticipants', 'topSurveys'));
     }
 }

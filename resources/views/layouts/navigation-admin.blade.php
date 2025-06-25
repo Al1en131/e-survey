@@ -15,7 +15,7 @@
 
     <!-- Sidebar -->
     <aside :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
-        class="fixed top-0 left-0 z-50 w-64 h-screen bg-secondary dark:bg-secondary border-r border-gray-200 dark:border-gray-700 transform transition-transform duration-300 ease-in-out md:translate-x-0">
+        class="fixed top-0 left-0 z-50 w-64 h-screen bg-secondary dark:bg-secondary transform transition-transform duration-300 ease-in-out md:translate-x-0">
         <div class="h-full flex flex-col justify-between px-4 py-4">
 
             <!-- LOGO SECTION -->
