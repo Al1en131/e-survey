@@ -136,9 +136,9 @@ function updateChoiceSelection(step, value) {
   );
   choiceOptions.forEach((option) => {
     if (option.id === `choice-${value}`) {
-      option.classList.add("!bg-primary", "!text-white");
+      option.classList.add("!bg-[#b86326]", "!text-white");
     } else {
-      option.classList.remove("!bg-primary", "!text-white");
+      option.classList.remove("!bg-[#b86326]", "!text-white");
     }
   });
 }

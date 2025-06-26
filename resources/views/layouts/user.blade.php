@@ -23,7 +23,7 @@
             {{-- <div class="absolute right-[50%] top-5">
                 <img src="/assets/image/mail.png" class="h-20 z-0" alt="">
             </div> --}}
-            <div class="absolute left-10 top-[20%]">
+            <div class="absolute left-10 top-[15%]">
                 <img src="/assets/image/coin.png" class="h-20" alt="">
             </div>
             <div class="absolute bottom-10 left-16">
@@ -32,7 +32,7 @@
             <div class="absolute right-5 top-[10%]">
                 <img src="/assets/image/pencil.png" class="h-20" alt="">
             </div>
-            <div class="absolute right-16 bottom-[20%]">
+            <div class="absolute right-16 bottom-[15%]">
                 <img src="/assets/image/clock.png" class="h-20 z-0" alt="">
             </div>
         </div>

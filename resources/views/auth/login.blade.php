@@ -24,7 +24,7 @@
 
                     <!-- Email -->
                     <div>
-                        <x-input-label for="email" :value="__('Email')" />
+                        <x-input-label class="mb-1" for="email" :value="__('Email')" />
                         <div class="relative">
                             <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -43,7 +43,7 @@
 
                     <!-- Password -->
                     <div>
-                        <x-input-label for="password" :value="__('Password')" />
+                        <x-input-label class="mb-1" for="password" :value="__('Password')" />
                         <div class="relative">
                             <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -69,11 +69,16 @@
                     </div>
 
                     <!-- Optional: Forgot password -->
-                    <div class="text-sm text-center">
-                        <a href="{{ route('password.request') }}" class="text-primary hover:underline">Forgot your
-                            password?</a>
-                    </div>
+
                 </form>
+                <div class="text-sm text-center mt-14">
+                    <a href="{{ route('password.request') }}" class="text-primary hover:underline">Forgot your
+                        password?</a>
+                </div>
+                <div class="text-sm text-center">
+                    <span>Belum punya akun?</span>
+                    <a href="{{ route('register') }}" class="text-primary hover:underline">Daftar di sini</a>
+                </div>
             </div>
         </div>
     </div>

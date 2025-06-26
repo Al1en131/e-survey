@@ -2,10 +2,10 @@
 
 @section('content')
     <section class="flex min-h-screen items-center justify-center">
-        <div class="absolute left-0 top-0 flex w-full items-center justify-between px-4 py-2">
+        <div class="absolute left-0 top-0 flex w-full items-center justify-between px-6 py-4">
             @foreach ($management as $item)
                 @if ($item->hasmedia('management'))
-                    <img class="md:h-[6vw] h-20" src="{{ $item->getFirstMediaUrl('management') }}" />
+                    <img class="md:h-[4vw] h-20" src="{{ $item->getFirstMediaUrl('management') }}" />
                 @else
                     <img class="md:h-[6vw] h-20" src="{{ asset('assets/image/TNYI.png') }}" />
                 @endif
@@ -13,7 +13,7 @@
         </div>
         <div class="flex items-center justify-center gap-10">
             <div class="max-md:hidden">
-                <img src="{{ asset('assets/img/Frame 1000006071.png') }}" alt="">
+                <img src="{{ asset('assets/image/this.svg') }}" alt="">
             </div>
             @if ($participants && $participants->is_finish == 1)
                 <div class="flex w-full md:w-1/2 mx-4 flex-col items-start gap-8 max-md:gap-0 pt-10 text-[#A3B0BC]">
@@ -63,7 +63,7 @@
                     </form>
                 </div>
             @else
-                <div class="flex w-full md:w-1/2 mx-4 flex-col items-start gap-8 max-md:gap-0 pt-10 text-[#A3B0BC]">
+                <div class="flex w-full md:w-1/2 mx-4 flex-col items-start gap-8 max-md:gap-0 pt-10 text-gray-300">
                     <h1 class="text-2xl font-semibold text-white max-md:mb-5">
                         About Survey
                     </h1>
@@ -99,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                    <a class="flex w-full items-center justify-center gap-5 rounded-lg bg-primary p-4 font-bold text-white"
+                    <a class="flex w-full items-center justify-center gap-5 rounded-lg bg-[#b86326] hover:bg-opacity-85 p-4 font-bold text-white"
                         href="{{ route('home.question', ['slug' => $survey->slug]) }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18"
                             fill="none">

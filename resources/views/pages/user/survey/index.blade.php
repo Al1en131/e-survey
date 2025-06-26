@@ -6,9 +6,9 @@
             <div class="flex w-full items-center justify-between pt-5 max-md:pt-0 md:flex-row sticky">
                 @foreach ($management as $item)
                     @if ($item->hasmedia('management'))
-                        <img class="md:h-[6vw] h-20" src="{{ $item->getFirstMediaUrl('management') }}" />
+                        <img class="md:h-[4vw] h-20" src="{{ $item->getFirstMediaUrl('management') }}" />
                     @else
-                        <img class="md:h-[6vw] h-20" src="{{ asset('assets/image/TNYI.png') }}" />
+                        <img class="md:h-[4vw] h-20" src="{{ asset('assets/image/TNYI.png') }}" />
                     @endif
                 @endforeach
                 <span
@@ -65,7 +65,7 @@
                             <label class="flex md:flex-row justify-center md:gap-10"
                                 for="question-{{ $key + 1 }}">
                                 <span
-                                    class="rounded-half flex h-12 w-12 md:h-[46px] md:w-[46px] items-center justify-center max-md:hidden bg-primary text-2xl md:text-3xl font-bold text-white">{{ $key + 1 }}</span>
+                                    class="rounded-half flex h-12 w-12 md:h-[46px] md:w-[46px] items-center justify-center max-md:hidden bg-[#b86326] text-2xl md:text-3xl font-bold text-white">{{ $key + 1 }}</span>
                                 <div class="flex w-full md:w-[80%] flex-col gap-6 md:gap-12 max-md:mt-16">
                                     @if ($item->stepable->getFirstMediaUrl('question'))
                                         <div class="w-full md:w-1/2">
@@ -113,7 +113,7 @@
                                         @endphp
                                         @foreach ($item->stepable->option as $j => $option)
                                             <button
-                                                class="choice-option flex w-full items-center justify-start gap-2 md:gap-4 rounded-lg bg-[#F4F4F4] px-4 py-6 md:px-8 md:py-12 hover:cursor-pointer hover:ring-4 hover:ring-primary"
+                                                class="choice-option flex w-full items-center justify-start gap-2 md:gap-4 rounded-lg bg-[#F4F4F4] px-4 py-6 md:px-8 md:py-12 hover:cursor-pointer hover:ring-4 hover:ring-[#b86326]"
                                                 id="choice-{{ $option->id }}" type="button"
                                                 onclick="saveAnswer('choices', {{ $key + 1 }}, {{ $item->stepable_id }}, '{{ $option->id }}'); validateInput();">
                                                 <span class="text-xl md:text-2xl font-semibold"
