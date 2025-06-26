@@ -1,7 +1,7 @@
 <x-admin-layout>
     <div class="flex items-center justify-between mb-4 max-md:mb-4">
         <div class="font-agrandir">
-            <h1 class="text-4xl text-secondary font-medium pb-2 max-md:text-lg max-md:pb-0">
+            <h1 class="text-2xl text-secondary font-semibold pb-2 max-md:text-lg max-md:pb-0">
                 Dashboard
             </h1>
         </div>

@@ -68,7 +68,7 @@
                             <div class="sm:justify-center">
                                 <a href="{{ route('login') }}" class="max-md:hidden">
                                     <button
-                                        class="py-4 md:ml-[50px] mt-12 px-10 flex max-md:mt-8 max-md:px-5 max-md:mx-auto max-md:text-sm rounded-[20px] gap-2 items-center hover:bg-primary bg-secondary justify-center text-white hover:border hover:border-secondary hover:text-secondary max-md:shadow-[5px_5px_0px_0px_rgb(39,82,121)] max-md:border max-md:border-white">
+                                        class="py-4 md:ml-[50px] mt-12 px-10 flex max-md:mt-8 max-md:px-5 max-md:mx-auto max-md:text-sm rounded-[20px] gap-2 items-center bg-secondary justify-center text-white hover:border max-md:shadow-[5px_5px_0px_0px_rgb(39,82,121)] max-md:border max-md:border-white">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                             viewBox="0 0 20 20" fill="none">
                                             <path

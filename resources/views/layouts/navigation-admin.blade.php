@@ -16,22 +16,16 @@
     <!-- Sidebar -->
     <aside :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
         class="fixed top-0 left-0 z-50 w-64 h-screen bg-secondary dark:bg-secondary transform transition-transform duration-300 ease-in-out md:translate-x-0">
-        <div class="h-full flex flex-col justify-between px-4 py-4">
+        <div class="h-full flex flex-col justify-between px-4 pb-4 pt-2">
 
             <!-- LOGO SECTION -->
             <div>
-                <a href="{{ route('admin.index') }}" class="flex items-center mb-6">
-                    @foreach ($management as $item)
-                        @if ($item->hasMedia('management'))
-                            <img class="h-12 w-auto" src="{{ $item->getFirstMediaUrl('management') }}" alt="Logo" />
-                        @else
-                            <img class="h-12 w-auto" src="{{ asset('assets/image/TNYI.png') }}" alt="Default Logo" />
-                        @endif
-                    @endforeach
+                <a href="{{ route('admin.index') }}" class="flex items-center mb-3">
+                    <img class="h-16 w-auto" src="{{ asset('assets/image/white.png') }}" alt="Default Logo" />
                 </a>
 
                 <!-- NAVIGATION LINKS -->
-                <nav class="flex flex-col space-y-4">
+                <nav class="flex flex-col space-y-5">
                     <a href="{{ route('admin.index') }}"
                         class="{{ request()->is('admin/dashboard') ? 'text-white font-semibold border-l-4 pl-2 border-white bg-white/10' : 'text-white' }} hover:text-white flex items-center p-2 gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

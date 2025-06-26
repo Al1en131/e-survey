@@ -15,15 +15,7 @@
     <div class="min-h-screen flex flex-col  ">
         <header class="items-center gap-2 flex sticky sm:px-6 lg:px-14">
             <div class="flex lg:justify-start">
-                @foreach ($management as $item)
-                    @if ($item->hasmedia('management'))
-                        <img class="block h-20 w-auto fill-current text-gray-800"
-                            src="{{ $item->getFirstMediaUrl('management') }}" />
-                    @else
-                        <img class="block h-20 w-auto fill-current text-gray-800"
-                            src="{{ asset('assets/image/TNYI.png') }}" />
-                    @endif
-                @endforeach
+                <img class="block h-28 w-auto fill-current text-gray-800" src="{{ asset('assets/image/blue.png') }}" />
             </div>
             @if (Route::has('login'))
                 <nav class="-mx-3 flex flex-1  justify-end">

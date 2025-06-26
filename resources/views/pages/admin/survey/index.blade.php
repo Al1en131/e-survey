@@ -3,8 +3,8 @@
         <div class="max-w-full flex-grow">
             <div class="flex items-center justify-between mb-6 max-md:mb-4">
                 <div class="font-agrandir">
-                    <h1 class="text-4xl text-secondary font-medium pb-2 max-md:text-lg max-md:pb-0">
-                        Survey
+                    <h1 class="text-2xl text-secondary font-semibold pb-2 max-md:text-lg max-md:pb-0">
+                      Survey
                     </h1>
                 </div>
                 <div class="text-right text-sm text-secondary font-medium max-md:text-xs" id="current-date">

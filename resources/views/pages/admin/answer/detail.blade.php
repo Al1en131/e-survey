@@ -11,7 +11,8 @@
                         </svg>
                     </a>
                 </div>
-                <h1 class=" text-4xl text-secondary font-medium pb-2 max-md:text-lg max-md:pb-0 ">Participant Data
+                <h1 class="text-2xl text-secondary font-semibold pb-2 max-md:text-lg max-md:pb-0">
+                  Participant Data
                 </h1>
 
             </div>

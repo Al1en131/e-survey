@@ -3,7 +3,7 @@
         <div class="">
             <div class="flex items-center justify-between pb-[31px] max-md:pb-3">
                 <div class="flex gap-4 max-md:gap-2 items-center">
-                    <h1 class=" text-4xl font-medium text-[#103558] max-md:pb-0 max-md:text-lg">
+                    <h1 class="text-2xl text-secondary font-semibold pb-2 max-md:text-lg max-md:pb-0">
                         Survey Results
                     </h1>
                 </div>

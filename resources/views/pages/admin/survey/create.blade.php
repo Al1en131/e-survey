@@ -3,8 +3,8 @@
         <div class="mx-auto">
             <div class="flex items-center justify-between pb-[31px] max-md:pb-4">
                 <div class="">
-                    <h1 class="pb-2 text-4xl font-medium text-secondary max-md:pb-0 max-md:text-lg">
-                        Add a New Survey
+                    <h1 class="text-2xl text-secondary font-semibold pb-2 max-md:text-lg max-md:pb-0">
+                        Add Survey
                     </h1>
                 </div>
                 <div class="flex items-center justify-end">
