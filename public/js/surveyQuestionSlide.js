@@ -103,13 +103,13 @@ function updateLikertSelection(step, value) {
   );
   likertButtons.forEach((button) => {
     if (parseInt(button.dataset.likert) === parseInt(value)) {
-      button.classList.add("ring-4", "ring-[#ABF770]");
-      button.children[0].classList.add("text-[#ABF770]", "!border-[#ABF770]");
+      button.classList.add("ring-4", "ring-[#b86326]");
+      button.children[0].classList.add("text-[#b86326]", "!border-[#b86326]");
     } else {
-      button.classList.remove("ring-4", "ring-[#ABF770]");
+      button.classList.remove("ring-4", "ring-[#b86326]");
       button.children[0].classList.remove(
-        "text-[#ABF770]",
-        "!border-[#ABF770]"
+        "text-[#b86326]",
+        "!border-[#b86326]"
       );
     }
   });

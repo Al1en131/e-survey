@@ -12,7 +12,7 @@
                     @endif
                 @endforeach
                 <span
-                    class="hidden md:block line-clamp-4 text-xl md:text-[2.5vw] overflow-visible font-semibold text-light mt-5 md:mt-0">
+                    class="hidden md:block line-clamp-4 text-xl md:text-base overflow-visible font-semibold text-light mt-5 md:mt-0">
                     {{ Str::limit($survey->title, 45) }}
                 </span>
                 <div class="relative md:hidden" x-data="{ open: false }">
@@ -78,12 +78,12 @@
                                     </span>
                                     @if ($item->stepable->type == 'essay')
                                         <input
-                                            class="font-josefin focus:shadow-outline appearance-none border-0 border-b border-white bg-transparent px-0 pb-4 pt-0 text-xl md:text-3xl text-ashes focus:border-primary focus:outline-none focus:ring-0"
+                                            class="font-josefin placeholder-gray-400 focus:shadow-outline appearance-none border-0 border-b border-white bg-transparent px-0 pb-4 pt-0 text-xl md:text-3xl text-ashes focus:border-[#b86326] focus:outline-none focus:ring-0"
                                             id="question-{{ $key + 1 }}" type="text"
                                             placeholder="Type your answer here"
                                             oninput="saveAnswer('essay', {{ $key + 1 }}, {{ $item->stepable_id }}, this.value); validateInput()">
                                     @elseif ($item->stepable->type == 'likert')
-                                        <div class="flex w-fit flex-col gap-6 text-white">
+                                        <div class="flex w-fit flex-col gap-6 text-primary">
                                             <div class="flex flex-wrap gap-4 md:gap-10"
                                                 id="likert-options-{{ $key + 1 }}">
                                                 @foreach ($likerts as $likert)
@@ -91,15 +91,15 @@
                                                     @break
                                                 @endif
                                                 <button
-                                                    class="flex w-fit items-center justify-center rounded-xl bg-black p-3 md:p-6 hover:ring-4 hover:ring-[#ABF770]"
+                                                    class="flex w-fit items-center justify-center rounded-xl bg-white p-3 md:p-6 hover:ring-4 hover:ring-[#b86326]"
                                                     data-likert="{{ $likert->likert }}" type="button"
                                                     onclick="selectLikert({{ $key + 1 }}, {{ $item->stepable_id }}, {{ $likert->likert }})">
                                                     <span
-                                                        class="rounded-half flex h-12 w-12 md:h-[46px] md:w-[46px] items-center justify-center border-4 border-white text-xl md:text-2xl font-semibold">{{ $likert->likert }}</span>
+                                                        class="rounded-half flex h-12 w-12 md:h-[46px] md:w-[46px] items-center justify-center border-4 border-primary text-xl md:text-2xl font-semibold">{{ $likert->likert }}</span>
                                                 </button>
                                             @endforeach
                                         </div>
-                                        <div class="flex justify-between text-sm md:text-xl">
+                                        <div class="flex justify-between text-[#b86326] text-sm md:text-xl">
                                             <span>Disagree</span>
                                             <span>Agree</span>
                                         </div>
