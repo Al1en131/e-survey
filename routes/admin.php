@@ -27,6 +27,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::controller(AnswerController::class)->prefix('answer')->name('answer.')->group(function () {
         Route::get('/index', 'index')->name('index');
         Route::get('/survey/{survey}/participant', 'detail')->name('detail');
+        Route::get('/survey/{survey}/participant/chart', 'chart')->name('chart');
         Route::get('/survey/{survey}/participant/{participant}','participant')->name('participant');
     });
 

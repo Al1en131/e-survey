@@ -12,7 +12,7 @@
                     </a>
                 </div>
                 <h1 class="text-2xl text-secondary font-semibold pb-2 max-md:text-lg max-md:pb-0">
-                  Participant Data
+                    Participant Data
                 </h1>
 
             </div>
@@ -98,4 +98,5 @@
             </table>
         </div>
     </div>
+
 </x-admin-layout>
