@@ -86,9 +86,9 @@
                                         <th scope="row"
                                             class="px-6 py-4 text-gray-900 whitespace-wrap font-normal survey-title">
                                             {{ $survey->title }}</th>
-                                        <td class="px-6 py-4 text-center">
+                                        <td class="px-6 py-4 text-center whitespace-nowrap">
                                             {{ date('d M Y', strtotime($survey->start_date)) }}</td>
-                                        <td class="px-6 py-4 text-center">
+                                        <td class="px-6 py-4 text-center whitespace-nowrap">
                                             {{ date('d M Y', strtotime($survey->end_date)) }}</td>
                                         <td class="px-6 py-4 w-12 content-center">
                                             <a href="#"

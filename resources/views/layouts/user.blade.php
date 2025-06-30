@@ -18,21 +18,21 @@
         @yield('header')
     </header>
     <main>
-        <div class="relative bg-secondary">
+        <div class="relative bg-secondary z-0">
             @yield('content')
             {{-- <div class="absolute right-[50%] top-5">
                 <img src="/assets/image/mail.png" class="h-20 z-0" alt="">
             </div> --}}
-            <div class="absolute left-10 top-[15%]">
+            <div class="absolute left-10 top-[15%] z-0">
                 <img src="/assets/image/coin.png" class="h-20" alt="">
             </div>
-            <div class="absolute bottom-10 left-16">
+            <div class="absolute bottom-28 left-28 z-0">
                 <img src="/assets/image/thumb.png" class="h-20" alt="">
             </div>
-            <div class="absolute right-5 top-[10%]">
+            <div class="absolute right-5 top-[10%] z-0">
                 <img src="/assets/image/pencil.png" class="h-20" alt="">
             </div>
-            <div class="absolute right-16 bottom-[15%]">
+            <div class="absolute right-16 bottom-[15%] z-0">
                 <img src="/assets/image/clock.png" class="h-20 z-0" alt="">
             </div>
         </div>

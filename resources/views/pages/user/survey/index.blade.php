@@ -1,7 +1,7 @@
 @extends('layouts.user')
 
 @section('content')
-    <section class="h-full antialiased">
+    <section class="h-full antialiased z-50">
         <div class="flex flex-col items-center justify-between gap-10 w-full md:max-w-screen min-h-screen px-4 md:px-20">
             <div class="flex w-full items-center justify-between pt-5 max-md:pt-0 md:flex-row sticky">
                 @foreach ($management as $item)
@@ -23,7 +23,7 @@
                                 d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                         </svg>
                     </button>
-                    <div x-show="open" @click.away="open = false"  :class="[open && '!block']" x-trap.noscroll="open"
+                    <div x-show="open" @click.away="open = false" :class="[open && '!block']" x-trap.noscroll="open"
                         class="absolute hidden right-0 px-0 mt-2 w-64 bg-white shadow-lg rounded-md z-10">
                         <div class="px-4 py-3">
                             <span class="block text-gray-900 dark:text-white">{{ auth()->user()->name }}</span>
@@ -62,8 +62,7 @@
                     @else
                         <li class="{{ $item->order }} {{ $item->type }}" id="step-{{ $key + 1 }}"
                             style="display: none;">
-                            <label class="flex md:flex-row justify-center md:gap-10"
-                                for="question-{{ $key + 1 }}">
+                            <label class="flex md:flex-row justify-center md:gap-10" for="question-{{ $key + 1 }}">
                                 <span
                                     class="rounded-half flex h-12 w-12 md:h-[46px] md:w-[46px] items-center justify-center max-md:hidden bg-[#b86326] text-2xl md:text-3xl font-bold text-white">{{ $key + 1 }}</span>
                                 <div class="flex w-full md:w-[80%] flex-col gap-6 md:gap-12 max-md:mt-16">
@@ -88,114 +87,114 @@
                                                 id="likert-options-{{ $key + 1 }}">
                                                 @foreach ($likerts as $likert)
                                                     @if ($likert->likert > $item->stepable->option->first()->option)
-                                                    @break
-                                                @endif
+                                                        @break
+                                                    @endif
+                                                    <button
+                                                        class="flex w-fit items-center justify-center rounded-xl bg-white p-3 md:p-6 hover:ring-4 hover:ring-[#b86326]"
+                                                        data-likert="{{ $likert->likert }}" type="button"
+                                                        onclick="selectLikert({{ $key + 1 }}, {{ $item->stepable_id }}, {{ $likert->likert }})">
+                                                        <span
+                                                            class="rounded-half flex h-12 w-12 md:h-[46px] md:w-[46px] items-center justify-center border-4 border-primary text-xl md:text-2xl font-semibold">{{ $likert->likert }}</span>
+                                                    </button>
+                                                @endforeach
+                                            </div>
+                                            <div class="flex justify-between text-[#b86326] text-sm md:text-xl">
+                                                <span>Disagree</span>
+                                                <span>Agree</span>
+                                            </div>
+                                        </div>
+                                        <input id="likert-value-{{ $key + 1 }}" type="hidden"
+                                            oninput="validateInput()">
+                                    @elseif ($item->stepable->type == 'choices')
+                                        <div class="grid w-full grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
+                                            @php
+                                                $alphabets = range('A', 'Z');
+                                            @endphp
+                                            @foreach ($item->stepable->option as $j => $option)
                                                 <button
-                                                    class="flex w-fit items-center justify-center rounded-xl bg-white p-3 md:p-6 hover:ring-4 hover:ring-[#b86326]"
-                                                    data-likert="{{ $likert->likert }}" type="button"
-                                                    onclick="selectLikert({{ $key + 1 }}, {{ $item->stepable_id }}, {{ $likert->likert }})">
-                                                    <span
-                                                        class="rounded-half flex h-12 w-12 md:h-[46px] md:w-[46px] items-center justify-center border-4 border-primary text-xl md:text-2xl font-semibold">{{ $likert->likert }}</span>
+                                                    class="choice-option flex w-full items-center justify-start gap-2 md:gap-4 rounded-lg bg-[#F4F4F4] px-4 py-6 md:px-8 md:py-12 hover:cursor-pointer hover:ring-4 hover:ring-[#b86326]"
+                                                    id="choice-{{ $option->id }}" type="button"
+                                                    onclick="saveAnswer('choices', {{ $key + 1 }}, {{ $item->stepable_id }}, '{{ $option->id }}'); validateInput();">
+                                                    <span class="text-xl md:text-2xl font-semibold"
+                                                        data-choice-id="{{ $option->id }}">{{ $alphabets[$j] }}.</span>
+                                                    <div class="text-base md:text-xl">{{ $option->option }}</div>
                                                 </button>
                                             @endforeach
                                         </div>
-                                        <div class="flex justify-between text-[#b86326] text-sm md:text-xl">
-                                            <span>Disagree</span>
-                                            <span>Agree</span>
-                                        </div>
-                                    </div>
-                                    <input id="likert-value-{{ $key + 1 }}" type="hidden"
-                                        oninput="validateInput()">
-                                @elseif ($item->stepable->type == 'choices')
-                                    <div class="grid w-full grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
-                                        @php
-                                            $alphabets = range('A', 'Z');
-                                        @endphp
-                                        @foreach ($item->stepable->option as $j => $option)
-                                            <button
-                                                class="choice-option flex w-full items-center justify-start gap-2 md:gap-4 rounded-lg bg-[#F4F4F4] px-4 py-6 md:px-8 md:py-12 hover:cursor-pointer hover:ring-4 hover:ring-[#b86326]"
-                                                id="choice-{{ $option->id }}" type="button"
-                                                onclick="saveAnswer('choices', {{ $key + 1 }}, {{ $item->stepable_id }}, '{{ $option->id }}'); validateInput();">
-                                                <span class="text-xl md:text-2xl font-semibold"
-                                                    data-choice-id="{{ $option->id }}">{{ $alphabets[$j] }}.</span>
-                                                <div class="text-base md:text-xl">{{ $option->option }}</div>
-                                            </button>
-                                        @endforeach
-                                    </div>
-                                    <input id="choices-value-{{ $key + 1 }}" type="hidden"
-                                        oninput="validateInput()">
-                                @endif
-                            </div>
-                        </label>
-                    </li>
-                @endif
-            @endforeach
-        </ul>
+                                        <input id="choices-value-{{ $key + 1 }}" type="hidden"
+                                            oninput="validateInput()">
+                                    @endif
+                                </div>
+                            </label>
+                        </li>
+                    @endif
+                @endforeach
+            </ul>
 
-        <div id="steps-question" class="flex w-full items-center justify-between flex-col md:flex-row">
-            <div class="font-sora text-xl md:text-2xl font-bold text-ashes">
-                <span class="text-2xl md:text-3xl" id="current-question">
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 inline-block text-white"
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
-                            stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor"
-                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-                        </path>
-                    </svg>
-                </span> / {{ count($steps) }}
+            <div id="steps-question" class="flex w-full items-center justify-between flex-col md:flex-row">
+                <div class="font-sora text-xl md:text-2xl font-bold text-ashes z-50">
+                    <span class="text-2xl md:text-3xl" id="current-question">
+                        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 inline-block text-white"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                            </path>
+                        </svg>
+                    </span> / {{ count($steps) }}
+                </div>
+                <div class="flex gap-5 py-12 z-50">
+                    <button
+                        class="rounded-half flex h-12 w-12 md:h-[60px] md:w-[60px] items-center justify-center bg-danger"
+                        type="button" onclick="prevStep()">
+                        <svg width="13" height="21" viewBox="0 0 13 21" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.684 2.47147L2.63216 10.5233L10.684 18.5751" stroke="#565E6D"
+                                stroke-width="4.0259" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button
+                        class="rounded-half flex h-12 w-12 md:h-[60px] md:w-[60px] cursor-not-allowed items-center justify-center bg-warning disabled:opacity-50"
+                        id="next-button" type="button" onclick="nextStep()" disabled>
+                        <svg width="13" height="21" viewBox="0 0 13 21" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.31604 2.47147L10.3678 10.5233L2.31604 18.5751" stroke="#565E6D"
+                                stroke-width="4.0259" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button
+                        class="hidden h-12 md:h-[60px] w-48 md:w-[200px] cursor-not-allowed items-center justify-center text-xl md:text-2xl text-[#565E6D] font-medium rounded-lg bg-warning disabled:opacity-50"
+                        id="finish-button" type="button">Finish</button>
+                </div>
             </div>
-            <div class="flex gap-5 py-12">
-                <button
-                    class="rounded-half flex h-12 w-12 md:h-[60px] md:w-[60px] items-center justify-center bg-danger"
-                    type="button" onclick="prevStep()">
-                    <svg width="13" height="21" viewBox="0 0 13 21" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.684 2.47147L2.63216 10.5233L10.684 18.5751" stroke="#565E6D"
-                            stroke-width="4.0259" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-                <button
-                    class="rounded-half flex h-12 w-12 md:h-[60px] md:w-[60px] cursor-not-allowed items-center justify-center bg-warning disabled:opacity-50"
-                    id="next-button" type="button" onclick="nextStep()" disabled>
-                    <svg width="13" height="21" viewBox="0 0 13 21" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.31604 2.47147L10.3678 10.5233L2.31604 18.5751" stroke="#565E6D"
-                            stroke-width="4.0259" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-                <button
-                    class="hidden h-12 md:h-[60px] w-48 md:w-[200px] cursor-not-allowed items-center justify-center text-xl md:text-2xl text-[#565E6D] font-medium rounded-lg bg-warning disabled:opacity-50"
-                    id="finish-button" type="button">Finish</button>
+
+            <div class="hidden w-full items-center justify-between flex-col md:flex-row" id="steps-checkpoint">
+                <div class="font-sora text-lg font-bold text-ashes z-50">
+                    <span class="text-2xl md:text-3xl">checkpoint 👋</span> / {{ count($steps) }}
+                </div>
+                <div class="py-12 z-50">
+                    <button
+                        class="flex h-12 md:h-[60px] w-48 md:w-[200px] items-center justify-center gap-3 rounded-lg bg-danger"
+                        type="button" onclick="nextStep()">
+                        <span class="text-xl md:text-2xl font-medium text-[#565E6D]">Continue</span>
+                        <svg width="13" height="21" viewBox="0 0 13 21" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.31604 2.47147L10.3678 10.5233L2.31604 18.5751" stroke="#565E6D"
+                                stroke-width="4.0259" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="hidden w-full items-center justify-between flex-col md:flex-row" id="steps-checkpoint">
-            <div class="font-sora text-lg font-bold text-ashes">
-                <span class="text-2xl md:text-3xl">checkpoint 👋</span> / {{ count($steps) }}
-            </div>
-            <div class="py-12">
-                <button
-                    class="flex h-12 md:h-[60px] w-48 md:w-[200px] items-center justify-center gap-3 rounded-lg bg-danger"
-                    type="button" onclick="nextStep()">
-                    <span class="text-xl md:text-2xl font-medium text-[#565E6D]">Continue</span>
-                    <svg width="13" height="21" viewBox="0 0 13 21" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.31604 2.47147L10.3678 10.5233L2.31604 18.5751" stroke="#565E6D"
-                            stroke-width="4.0259" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<script>
-    let steps = 1;
-    const totalSteps = {!! json_encode(count($steps)) !!};
-    const currentSlug = {!! json_encode($survey->slug) !!};
-    const homeAnswerUrl = {!! json_encode(route('home.answer.end')) !!}
-</script>
-<script src="{{ asset('js/surveyQuestionSlide.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js"></script>
+    <script>
+        let steps = 1;
+        const totalSteps = {!! json_encode(count($steps)) !!};
+        const currentSlug = {!! json_encode($survey->slug) !!};
+        const homeAnswerUrl = {!! json_encode(route('home.answer.end')) !!}
+    </script>
+    <script src="{{ asset('js/surveyQuestionSlide.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js"></script>
 @endsection

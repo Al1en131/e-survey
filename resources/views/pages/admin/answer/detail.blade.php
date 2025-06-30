@@ -80,7 +80,7 @@
                             </td>
                             <td width="15%" class="px-6 py-4 content-center">
                                 <div>
-                                    <a href="{{ route('admin.answer.participant', ['survey' => $participant->id, 'participant' => $participant->id]) }}"
+                                    <a href="{{ route('admin.answer.participant', ['survey' => $survey->id, 'participant' => $participant->id]) }}"
                                         class="btn btn-primary">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                             stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

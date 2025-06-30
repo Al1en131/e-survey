@@ -30,7 +30,7 @@
         @endif
 
         <!-- Page Content -->
-        <main>
+        <main class="z-50">
             {{ $slot }}
         </main>
     </div>

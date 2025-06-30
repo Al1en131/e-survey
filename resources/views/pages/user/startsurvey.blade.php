@@ -94,7 +94,7 @@
                             </svg>
                             <div class="flex flex-col">
                                 <span
-                                    class="font-semibold text-white">{{ date('d, M Y', strtotime($survey->start_date)) . ' - ' . date('d, M Y', strtotime($survey->end_date)) }}</span>
+                                    class="font-semibold text-white">{{ date('d M Y', strtotime($survey->start_date)) . ' - ' . date('d M Y', strtotime($survey->end_date)) }}</span>
                                 <span class="text-xs">Finish the Survey before the time is up </span>
                             </div>
                         </div>
