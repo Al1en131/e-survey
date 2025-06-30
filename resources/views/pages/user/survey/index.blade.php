@@ -72,7 +72,7 @@
                                                 alt="question images">
                                         </div>
                                     @endif
-                                    <span class="text-pretty text-xl md:text-3xl font-medium text-light">
+                                    <span class="text-pretty text-xl md:text-2xl font-medium text-light">
                                         {{ $item->stepable->question }}
                                     </span>
                                     @if ($item->stepable->type == 'essay')
@@ -98,7 +98,7 @@
                                                     </button>
                                                 @endforeach
                                             </div>
-                                            <div class="flex justify-between text-[#b86326] text-sm md:text-xl">
+                                            <div class="flex justify-between text-[#eaa35d] text-sm md:text-xl">
                                                 <span>Disagree</span>
                                                 <span>Agree</span>
                                             </div>
