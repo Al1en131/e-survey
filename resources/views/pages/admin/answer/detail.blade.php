@@ -59,7 +59,6 @@
                         <th scope="col" class="px-6 py-3">
                             Name
                         </th>
-                        {{-- email --}}
                         <th scope="col" class="px-6 py-3">
                             Email
                         </th>

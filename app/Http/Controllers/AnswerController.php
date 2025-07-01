@@ -188,16 +188,18 @@ class AnswerController extends Controller
                     'data' => $essayAnswers->values(),
                 ];
             } elseif ($question->type === 'likert') {
-                // Ambil angka skala dari options (misal: ['1','2','3','4','5'])
-                $availableLikerts = Option::where('question_id', $question->id)
-                    ->orderBy('option') // biar urut
-                    ->pluck('option')   // isinya: ['1','2','3','4','5']
-                    ->toArray();
+                // Ambil batas maksimal likert dari satu-satunya option
+                $maxLikert = Option::where('question_id', $question->id)
+                    ->orderByDesc('option')
+                    ->value('option'); // misalnya 10
 
-                // Buat map jumlah jawaban tiap skala
+                // Buat array dari 1 sampai maxLikert
+                $availableLikerts = range(1, (int) $maxLikert); // [1,2,3,...,10]
+
+                // Hitung jumlah jawaban tiap skala
                 $grouped = collect($availableLikerts)->mapWithKeys(function ($label) use ($answers) {
                     return [
-                        $label => $answers->filter(fn($a) => (string) $a->answerable->likert === $label)->count()
+                        (string)$label => $answers->filter(fn($a) => (string) $a->answerable->likert === (string)$label)->count()
                     ];
                 });
 
@@ -205,7 +207,7 @@ class AnswerController extends Controller
                     'question' => $question->question,
                     'type' => 'likert',
                     'data' => $grouped,
-                    'labels' => $availableLikerts // ← untuk digunakan di JS nanti
+                    'labels' => $availableLikerts
                 ];
             } else {
                 $grouped = $answers->groupBy(fn($a) => $a->answerable->option ?? 'Tidak dijawab')

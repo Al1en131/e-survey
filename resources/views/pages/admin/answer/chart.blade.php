@@ -23,7 +23,7 @@
         <div class=" mb-6 max-md:mb-4 max-md:hidden">
             <div class="font-agrandir">
                 <div class="flex justify-between items-center">
-                    <h1 class=" text-4xl text-secondary font-medium pb-2 max-md:text-lg max-md:pb-0">Participant
+                    <h1 class=" text-4xl text-secondary font-medium pb-2 max-md:text-lg max-md:pb-0">Chart
                         Data
                     </h1>
                     <div class="flex items-center justify-end">
@@ -83,14 +83,14 @@
 
         chartData.forEach((item, index) => {
             const ctx = document.getElementById(`chart-${index}`).getContext('2d');
-
-            const labels = item.type === 'likert' ?
-                item.labels :
-                Object.keys(item.data);
-
             const values = item.type === 'likert' ?
                 item.labels.map(label => item.data[label] ?? 0) :
                 Object.values(item.data);
+            const labels = item.type === 'likert' ?
+                item.labels // ini isinya ['1', '2', '3', '4', '5']
+                :
+                Object.keys(item.data);
+
 
             const total = values.reduce((a, b) => a + b, 0);
 
@@ -152,7 +152,7 @@
                             ticks: {
                                 stepSize: 1,
                                 precision: 0
-                            },
+                            }
                         },
                         y: {
                             beginAtZero: true,
@@ -166,6 +166,7 @@
                             }
                         }
                     } : {}
+
 
 
                 },
